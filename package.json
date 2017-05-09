@@ -1,5 +1,5 @@
 {
-  "name": "passport-line",
+  "name": "passport-line-v2",
   "version": "1.0.0",
   "description": "passport strategy for line",
   "main": "index.js",
