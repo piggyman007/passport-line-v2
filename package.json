@@ -1,0 +1,29 @@
+{
+  "name": "passport-line",
+  "version": "1.0.0",
+  "description": "passport strategy for line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piggyman007/passport-line.git"
+  },
+  "keywords": [
+    "passport-line",
+    "line",
+    "passport"
+  ],
+  "author": "alongkorn chetasumon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piggyman007/passport-line/issues"
+  },
+  "homepage": "https://github.com/piggyman007/passport-line#readme",
+  "dependencies": {
+    "passport-oauth2": "^1.4.0",
+    "shortid": "^2.2.8",
+    "util": "^0.10.3"
+  }
+}
