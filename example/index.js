@@ -1,14 +1,16 @@
 const express = require('express')
-const passport = require('passport')
 const path = require('path')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
-const passportLine = require('passport-line-v2')
 const PORT = 5000
-const LINE_CHANNEL_ID = '1514100771'
-const LINE_CHANNEL_SECRET = 'd654def06d6e0327f42c4db2c13788a5'
-const CALLBACK_URL = 'https://163.47.11.69/auth/line/callback'
+const passport = require('passport')
+const passportLine = require('passport-line-v2')
+
+// specify some parameters here
+const LINE_CHANNEL_ID = 'put your line channel id here'
+const LINE_CHANNEL_SECRET = 'put your line channel secret here'
+const CALLBACK_URL = 'your call back url' // e.g., https:www.somedomain.com or https://1.2.3.4
 
 // serialize and deserialize user
 passport.serializeUser((user, done) => {
@@ -60,13 +62,20 @@ app.get('/login', (req, res) => {
   res.render('login', { user: req.user })
 })
 
+// authenticate with line service
 app.get('/auth/line', passport.authenticate(passportLine.NAME))
 
+/**
+ * line service will redirect to this callback api
+ * if failed, goto /login
+ * if pass, redirect to /
+*/
 app.get('/auth/line/callback',
   passport.authenticate(passportLine.NAME, { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect('/')
-  })
+  }
+)
 
 app.get('/logout', (req, res) => {
   req.logout()
