@@ -1,0 +1,21 @@
+{
+  "name": "passport-line-examples-login",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
+    "eslint": "^3.19.0",
+    "express": "^3.21.2",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-line-v2": "^1.0.0",
+    "passport-oauth2": "^1.4.0",
+    "path": "^0.12.7",
+    "shortid": "^2.2.8",
+    "util": "^0.10.3"
+  }
+}
